@@ -3,7 +3,7 @@
 
 <head>
 
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Noto+Sans" rel="stylesheet">
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/material/css/materialize.min.css" media="screen,projection" />
 
@@ -19,7 +19,7 @@
 	</title>
 
 	<style>
-		body {font-family: 'Roboto Slab', sans-serif;}
+		body {font-family: 'Noto Sans', sans-serif;}
 		.variasi {
 			width: 50px;
 			height: 3px;
@@ -41,13 +41,35 @@
 		<nav class="indigo accent-3">
 			<div class="container">
 				<div class="nav-wrapper">
-					<a href="#!" class="brand-logo">LL BookStore</a>
+					<a href="<?php echo base_url(); ?>" class="brand-logo"><?php echo $web['namaweb']; ?></a>
 					<a href="#" data-target="sidenavll" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
-						<li><a href="sass.html">Beranda</a></li>
-						<li><a href="badges.html">Jelajah Buku</a></li>
-						<li><a href="collapsible.html">Akun</a></li>
-						<li><a href="mobile.html">Login</a></li>
+						<?php if ($this->session->userdata('log') == 'logged') { ?>
+							<li><a href="<?php echo base_url(); ?>">Beranda</a></li>
+							<?php if ($this->session->userdata('admin') == 1) { ?>
+								<li><a href="<?php echo base_url(); ?>akun/admin">Akun & Admin</a></li>
+							<?php
+
+					} ?>
+							<?php if ($this->session->userdata('admin') != 1) { ?>
+								<li><a href="<?php echo base_url(); ?>akun">Akun</a></li>
+							<?php
+
+					} ?>
+							
+							<li><a href="<?php echo base_url(); ?>cari">Cari Buku</a></li>
+							<li><a href="<?php echo base_url(); ?>home/logout">Logout</a></li>
+						<?php
+
+				} else { ?>
+					<li><a href="<?php echo base_url(); ?>">Beranda</a></li>
+					<li><a href="<?php echo base_url(); ?>cari">Cari Buku</a></li>
+					<li><a href="<?php echo base_url(); ?>home/login">Login</a></li>
+					<li><a href="<?php echo base_url(); ?>home/register">Register</a></li>
+				<?php
+
+		} ?>
+						
 					</ul>
 				</div>
 			</div>

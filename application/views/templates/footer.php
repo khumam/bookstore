@@ -1,6 +1,6 @@
 <section>
 	<div class="container-fluid indigo accent-3 p-1 center-align white-text">
-		Copyright @2019 LL BookStore
+		Copyright @2019 <?php echo $web['namaweb']; ?>
 	</div>
 </section>
 
@@ -27,12 +27,44 @@
 	});
 
 	$(document).ready(function () {
+		$('#tabskategori').tabs({
+			swipeable: true
+		});
+	});
+
+	$(document).ready(function () {
+		$('#tabspromo').tabs({
+			swipeable: true
+		});
+	});
+
+	$(document).ready(function () {
 		$('.scrollspy').scrollSpy();
 	});
 
 	$(document).ready(function () {
 		$('select').formSelect();
 	});
+
+	$(document).ready(function () {
+	$('.multiple-items').slick({
+  		infinite: true,
+  		slidesToShow: 2,
+  		slidesToScroll: 1,
+	  	autoplay: false,
+		
+	});
+	});
+
+	$(document).ready(function () {
+	$('.multiple-items-dua').slick({
+  		infinite: true,
+  		slidesToShow: 2,
+  		slidesToScroll: 1,
+	  	autoplay: false
+	});
+	});
+
 
 </script>
 </body>

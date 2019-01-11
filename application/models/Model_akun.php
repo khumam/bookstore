@@ -11,23 +11,48 @@ class Model_akun extends CI_Model
             "nama" => $this->input->post('nama', true),
             "email" => $this->input->post('email', true),
             "password" => md5($this->input->post('password', true)),
+            "gambar" => 'defaultuseravatarbest.png',
         ];
 
-        $this->db->insert('user', $dataakun);
+        $this->db->where('username', $dataakun['username']);
+        $query = $this->db->get('user');
+
+        if ($query->num_rows() == 1) {
+            return false;
+        } else {
+            $this->db->insert('user', $dataakun);
+            return true;
+        }
     }
 
-    public function updateAkun($user)
+    public function updateAkun($user, $valid)
     {
 
-        $dataakun = [
-            "nama" => $this->input->post('nama', true),
-            "email" => $this->input->post('email', true),
-            "nohp" => $this->input->post('nohp', true),
-            "alamat" => $this->input->post('alamat', true),
-        ];
+        if ($valid == true) {
+            $dataakun = [
+                "nama" => $this->input->post('nama', true),
+                "email" => $this->input->post('email', true),
+                "nohp" => $this->input->post('nohp', true),
+                "alamat" => $this->input->post('alamat', true),
+                "gambar" => $this->upload->data('file_name')
+            ];
 
-        $this->db->where('username', $user);
-        $this->db->update('user', $dataakun);
+            $this->db->where('username', $user);
+            $this->db->update('user', $dataakun);
+        }
+
+        if ($valid == false) {
+            $dataakun = [
+                "nama" => $this->input->post('nama', true),
+                "email" => $this->input->post('email', true),
+                "nohp" => $this->input->post('nohp', true),
+                "alamat" => $this->input->post('alamat', true),
+            ];
+
+            $this->db->where('username', $user);
+            $this->db->update('user', $dataakun);
+        }
+
     }
 
     public function displayAkun($username)
@@ -53,7 +78,7 @@ class Model_akun extends CI_Model
 
     public function logout()
     {
-        $userdata = ['user', 'log'];
+        $userdata = ['user', 'log', 'admin'];
         $this->session->unset_userdata($userdata);
     }
 }

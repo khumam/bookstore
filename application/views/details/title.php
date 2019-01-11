@@ -8,9 +8,9 @@
 
 		<div class="valign-wrapper mt-4">
 			<div class="container center-align">
-				<img class="responsive-img" src="<?php echo base_url();?>assets/img/slide/book1.jpg">
-				<h5 class="mt-2">Harry Potter and The Prisoner of Azkaban</h5>
-				<h6 class="mt-1">- J.K. Rowling -</h6>
+				<img class="responsive-img" src="<?php echo base_url(); ?>assets/img/sampulbuku/<?php echo $details['sampul']; ?>">
+				<h5 class="mt-2"><?php echo $details['judulbuku']; ?></h5>
+				<h6 class="mt-1">- <?php echo $details['penulis']; ?> -</h6>
 			</div>
 		</div>
 	</div>

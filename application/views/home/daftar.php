@@ -12,6 +12,12 @@
 		</div>
 		<?php endif; ?>
 
+		<?php if ($this->session->flashdata('erordaftar')) : ?>
+		<div class="red lighten-1 white-text pt-1 pb-1 pr-2 pl-2 mb-3">
+			<?php echo $this->session->flashdata('erordaftar'); ?>
+		</div>
+		<?php endif; ?>
+
 		<form action="" method="post">
 			<div class="row">
 				<div class="input-field col s12">
@@ -21,6 +27,7 @@
 				<div class="input-field col s12">
 					<input class="validate" type="text" id="username" name="username" placeholder="Username">
 					<label for="username">Username</label>
+					<span class="helper-text" data-error="wrong" data-success="right">Hanya huruf, angka, underscore, dan strip</span>
 				</div>
 				<div class="input-field col s12">
 					<input class="validate" type="email" id="email" name="email" placeholder="Email">

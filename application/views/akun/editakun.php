@@ -12,7 +12,7 @@
 		</div>
 		<?php endif; ?>
 
-		<form action="" method="post">
+		<form action="" method="post" enctype="multipart/form-data">
 			<div class="row">
 				<div class="input-field col s12">
 					<input class="validate" type="text" id="name" name="nama" placeholder="Nama lengkap" value="<?php echo $pengguna['nama']; ?>">
@@ -34,11 +34,22 @@
 					<textarea class="materialize-textarea" id="alamat" name="alamat" placeholder="Alamat"><?php echo $pengguna['alamat']; ?></textarea>
 					<label for="alamat">Alamat</label>
 				</div>
+				<div class="file-field input-field col s12">
+					<div class="btn">
+						<span>Tambah foto profil</span>
+						<input type="file" name="fotoprofil">
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" value="<?php echo $pengguna['gambar']; ?>" name="fotoprofil">
+					</div>
+					<span class="helper-text" data-error="wrong" data-success="right">Ukuran minimum 150x150 (px)</span>
+				</div>
 				<div class="input-field col s12">
 					<div class="center mt-2">
 						<button class="waves-effect waves-light btn indigo accent-4" type="submit" name="daftar">Edit</button>
 					</div>
 				</div>
+
 			</div>
 		</form>
 	</div>

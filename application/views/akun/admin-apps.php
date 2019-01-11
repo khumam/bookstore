@@ -7,12 +7,12 @@
 				</ul>
 			</div>
 			<div class="col s12">
-				Nama Aplikasi:<br>
-				Deskripsi:<br>
-				Pemilik:<br>
+				Nama Aplikasi: <?php echo $web['namaweb']; ?><br>
+				Deskripsi: <?php echo $web['deskripsiweb']; ?><br>
+				Pemilik: <?php echo $web['pemilikweb']; ?><br>
 			</div>
 			<div class="col s6 offset-s6 mt-1">
-				<a class="waves-effect waves-light btn green accent-4"><i class="material-icons">edit</i> Edit
+				<a href="<?php echo base_url(); ?>akun/admin_editapps" class=" right waves-effect waves-light btn green accent-4"><i class="material-icons">edit</i> Edit
 					Aplikasi</i></a>
 			</div>
 		</div>

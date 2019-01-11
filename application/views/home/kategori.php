@@ -8,18 +8,11 @@
 		<h5 class="pl-1 pr-1 pt-1">Cattegory</h5>
 		<div class="variasi indigo accent-4 ml-1 mr-1 mb-1"></div>
 		<div class="row responsive-table center">
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
-			<div class="col s4 mt-2 mb-2"><i class="material-icons">insert_chart</i><br>Kessehatan</div>
+		
+		<?php foreach ($kategori as $kat) { ?>
+			<div class="col s4 mt-2 mb-2"><i class="material-icons"><?php echo $kat->ikon; ?></i><br><?php echo $kat->nama; ?></div>
+		<?php 
+} ?>
 		</div>
 	</div>
 </section>

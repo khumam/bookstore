@@ -2,27 +2,16 @@
 	<div class="container-fluid">
 		<div class="slider">
 			<ul class="slides">
+			<?php foreach ($promo as $dataslide) { ?>
 				<li>
-					<img src="<?php echo base_url(); ?>assets/img/slide/1.jpg"> <!-- random image -->
+					<img src="<?php echo base_url() . 'assets/img/promo/' . $dataslide->image; ?>"> <!-- random image -->
 					<div class="caption center-align">
-						<h3>This is our big Tagline!</h3>
-						<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+						<h3><?php echo $dataslide->title; ?></h3>
+						<h5 class="light grey-text text-lighten-3"><?php echo $dataslide->slogan; ?></h5>
 					</div>
 				</li>
-				<li>
-					<img src="<?php echo base_url(); ?>assets/img/slide/2.jpg"> <!-- random image -->
-					<div class="caption left-align">
-						<h3>Left Aligned Caption</h3>
-						<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-					</div>
-				</li>
-				<li>
-					<img src="<?php echo base_url(); ?>assets/img/slide/3.jpg"> <!-- random image -->
-					<div class="caption right-align">
-						<h3>Right Aligned Caption</h3>
-						<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-					</div>
-				</li>
+			<?php 
+	} ?>
 			</ul>
 		</div>
 	</div>
